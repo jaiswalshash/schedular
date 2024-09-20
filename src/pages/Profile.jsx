@@ -24,7 +24,7 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <div className=" mx-auto px-[4rem] mt-4">
+      <div className=" mx-auto px-[4rem] mt-4 animate-fadeIn">
         <h1 className="text-lg font-semibold mb-4 flex items-center">
           Profile
         </h1>

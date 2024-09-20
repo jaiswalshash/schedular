@@ -19,17 +19,17 @@ const App = () => {
       <>
         {/* Routes */}
         <Routes>
-          
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
           <Route path="/schedules" element={<Schedules />} />
           <Route path="/form" element={<Form />} />
           <Route path="/customised-schedule" element={<CustomisedSchdule />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/transfers" element={<Transfer />} /> 
-          <Route path="/transfers/ssc" element={<SSC />} /> 
-          <Route path="/transfers/rrb" element={<RRB />} /> 
-          <Route path="/transfers/banking" element={<Banking />} /> 
-          <Route path="/login" element={<Login />} /> 
+          <Route path="/transfers" element={<Transfer />} />
+          <Route path="/transfers/ssc" element={<SSC />} />
+          <Route path="/transfers/rrb" element={<RRB />} />
+          <Route path="/transfers/banking" element={<Banking />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </>
     </Router>

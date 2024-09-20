@@ -28,7 +28,7 @@ const ScheduleButton = ({ name, duration }) => (
 );
 
 const ExpertCard = ({ name, degree, description, isHighlighted }) => (
-  <div className={`p-4 rounded-lg shadow hover:bg-blue-100 bg-teal-100 cursor-pointer}`}>
+  <div className={`p-4 rounded-lg shadow hover:bg-blue-100 bg-teal-100 cursor-pointer animate-fadeIn}`}>
     <div className="flex items-center mb-2">
       <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
       <div>
@@ -41,7 +41,7 @@ const ExpertCard = ({ name, degree, description, isHighlighted }) => (
 );
 
 const CommunityInsightCard = ({ name, degree, description }) => (
-  <div className="bg-white p-4 rounded-lg shadow">
+  <div className="bg-white p-4 rounded-lg shadow animate-fadeIn">
     <div className="flex items-center mb-2">
       <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
       <div>
@@ -55,7 +55,7 @@ const CommunityInsightCard = ({ name, degree, description }) => (
 
 const SchedulesExpertsCommunity = () => {
   return (
-    <div className="container mx-auto p-4 px-[4rem]">
+    <div className="container mx-auto p-4 px-[4rem] animate-fadeIn">
       <section className="mb-8">
         <h2 className="text-lg font-medium mb-4">Your Schedules</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

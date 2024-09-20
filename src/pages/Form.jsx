@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SSC from "../assets/SSC.png";
 import Banking from "../assets/RRB.png";
@@ -15,7 +15,6 @@ import "../components/navbar.css";
 import Navbar from "../components/Navbar";
 
 const Form = () => {
-  // Define the form steps dynamically with option names and images
   const formData = [
     {
       title: "Choose your goal",
@@ -60,26 +59,34 @@ const Form = () => {
       ],
     },
     {
-      title: "Preparation Tier",
+      title: "Want to prepare for",
       options: [
-        { name: "Prelims", image: pre },
-        { name: "Mains", image: mains },
-        { name: "Both", image: both },
+        { name: "PRELIMS (TIER 1)", image: pre },
+        { name: "MAINS (TIER 2)", image: mains },
+        { name: "PRELIMS + MAINS", image: both },
       ],
     },
     {
-      title: "Time dedication",
+      title: "Number of hours you can devote per day",
       options: [
-        { name: "Less than 5 hours a day", image: less5 },
-        { name: "More than 5 hours a day", image: more5 },
+        { name: "Less than 5", image: less5 },
+        { name: "More than 5", image: more5 },
       ],
     },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedOptions, setSelectedOptions] = useState({});
+  const [animate, setAnimate] = useState(false);
   const totalSteps = 5;
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setAnimate(false); // Reset animation on page change
+    setTimeout(() => {
+      setAnimate(true); // Trigger animation after page loads
+    }, 100);
+  }, [currentPage]);
 
   const handleNext = () => {
     if (currentPage < totalSteps) setCurrentPage(currentPage + 1);
@@ -99,10 +106,9 @@ const Form = () => {
 
   const handleSubmit = () => {
     console.log("Form submitted with answers:", selectedOptions);
-    navigate("/customised-schedule")
+    navigate("/customised-schedule");
   };
 
-  // Dynamically determine the current options based on previous answers
   const getCurrentOptions = () => {
     if (currentPage === 2) {
       const selectedGoal = selectedOptions[1]?.name;
@@ -111,7 +117,6 @@ const Form = () => {
     return formData[currentPage - 1].options;
   };
 
-  // Determine the image to display based on the selected goal
   const getImageForCurrentPage = () => {
     const selectedGoal = selectedOptions[1]?.image;
     return selectedGoal || "";
@@ -154,19 +159,23 @@ const Form = () => {
         </div>
 
         {/* Form Page Content */}
-        <div className="w-full">
+        <div
+          className={`w-full transform transition-all duration-1000 ease-in-out ${
+            animate ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+        >
           <h2 className="text-center text-lg font-semibold mb-4">
             {formData[currentPage - 1].title}
           </h2>
+
           {/* Radio options */}
           <div className="flex flex-col space-y-5">
             {getCurrentOptions().map((option) => (
               <label
                 key={option.name}
-                className="container flex items-center bg-[#D9D9D9] rounded-md py-2 px-4 cursor-pointer hover:bg-gray-200 transition-colors"
+                className="container flex items-center bg-[#D9D9D9] rounded-md py-2 px-4 cursor-pointer hover:bg-gray-200 transition-transform transform hover:scale-105"
               >
                 <div className="flex items-center flex-1">
-                  {/* Display the image for the current option */}
                   <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3">
                     <img
                       src={option.image || getImageForCurrentPage()}
@@ -194,25 +203,18 @@ const Form = () => {
 
         {/* Navigation Buttons */}
         <div className="flex justify-end mt-6">
-          {/* <button
-          onClick={handlePrevious}
-          disabled={currentPage === 1}
-          className="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded"
-        >
-          Previous
-        </button> */}
           {currentPage < totalSteps ? (
             <button
               onClick={handleNext}
               disabled={!selectedOptions[currentPage]}
-              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+              className="bg-blue-500  hover:bg-blue-600 text-white py-2 px-4 rounded"
             >
               Next
             </button>
           ) : (
             <button
               onClick={handleSubmit}
-              className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
+              className="bg-[#1A6400] hover:bg-green-600 text-white py-2 px-4 rounded"
             >
               Submit
             </button>

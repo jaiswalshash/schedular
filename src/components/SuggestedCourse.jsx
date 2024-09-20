@@ -2,6 +2,7 @@ import React from "react";
 import SSC from "../assets/SSC.png";
 import "./navbar.css";
 
+// Simulate data fetched from an API or backend
 const dummyData = {
   customSchedule: {
     duration: "3 MONTHS",
@@ -52,7 +53,6 @@ const dummyData = {
       ],
       price: 29,
     },
-    // ... more similar schedules ...
   ],
   otherExams: [
     {
@@ -91,19 +91,19 @@ const dummyData = {
       ],
       price: 29,
     },
-    // ... more other exams ...
   ],
 };
 
-const ScheduleCard = ({ schedule, isPrimary = false }) => (
+// A reusable card component to display schedules
+const ScheduleCard = ({ schedule, isPrimary = false, index }) => (
   <div
     className={`rounded-lg shadow p-5 ${
       isPrimary ? "bg-green-100" : "bg-gray-100"
-    }`}
+    } `}
+    style={{ animationDelay: `${index * 0.2}s` }} // Adding a delay for each card
   >
     <div className="flex gap-3 mb-2">
       <img className="h-[40px] w-[40px]" src={SSC} alt="SSC" />
-
       <div className="flex flex-col">
         <div className="heading text-[#364374] font-bold flex items-center gap-1">
           <p className="font-bold">{schedule.duration}</p>
@@ -144,29 +144,23 @@ const ScheduleCard = ({ schedule, isPrimary = false }) => (
 
 const SuggestedCourse = () => {
   return (
-    <div className="container mx-auto p-4 px-[4rem]">
-      <h2 className="form text-lg font-semibold mb-4">
-        Your customized schedule
-      </h2>
+    <div className="container mx-auto p-4 px-[4rem] animate-fadeIn">
+      <h2 className="form text-lg font-semibold mb-4">Your customized schedule</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-[3rem]">
-        <ScheduleCard schedule={dummyData.customSchedule} isPrimary={true} />
+        <ScheduleCard schedule={dummyData.customSchedule} isPrimary={true} index={0} />
       </div>
 
-      <h3 className="form text-lg font-semibold mt-8 mb-4">
-        Similar study schedules
-      </h3>
+      <h3 className="form text-lg font-semibold mt-8 mb-4">Similar study schedules</h3>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-[3rem]">
         {dummyData.similarSchedules.map((schedule, index) => (
-          <ScheduleCard key={index} schedule={schedule} />
+          <ScheduleCard key={index} schedule={schedule} index={index + 1} />
         ))}
       </div>
 
-      <h3 className="text-lg font-semibold mt-8 mb-4">
-        Targeting other exams as well?
-      </h3>
+      <h3 className="text-lg font-semibold mt-8 mb-4">Targeting other exams as well?</h3>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-[3rem]">
         {dummyData.otherExams.map((schedule, index) => (
-          <ScheduleCard key={index} schedule={schedule} />
+          <ScheduleCard key={index} schedule={schedule} index={index + 5} />
         ))}
       </div>
     </div>
