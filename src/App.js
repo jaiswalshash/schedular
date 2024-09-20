@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import RRB from "./pages/RRB";
 import Banking from "./pages/Banking";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/transfers/rrb" element={<RRB />} />
           <Route path="/transfers/banking" element={<Banking />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </>
     </Router>
