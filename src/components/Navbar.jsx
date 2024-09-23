@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="flex flex-col items-center">
         <Link to="/">
           <div className="flex gap-1">
-            <h1 className="heading text-2xl font-bold text-blue-900">
+            <h1 className="heading text-3xl font-bold text-blue-900">
               Scheduler
             </h1>
             <img
