@@ -55,7 +55,7 @@ const CommunityInsightCard = ({ name, degree, description }) => (
 
 const SchedulesExpertsCommunity = () => {
   return (
-    <div className="container mx-auto p-4 px-[4rem] animate-fadeIn">
+    <div className="container mx-auto p-4 md:px-[4rem] lg:px-[4rem] animate-fadeIn">
       <section className="mb-8">
         <h2 className="text-lg font-medium mb-4">Your Schedules</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

@@ -154,7 +154,7 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="flex flex-col animate-fadeIn absolute items-end md:hidden inset-0 bg-black bg-opacity-20 z-15 h-screen space-y-3">
+        <div className="flex flex-col animate-fadeIn absolute items-end md:hidden inset-0 bg-black bg-opacity-20 z-20 h-screen space-y-3">
           <div className="bg-white absolute top-0 p-4 bottom-0 w-[85%] rounded-md">
             <div className="flex justify-between items-end w-full">
               <div></div>

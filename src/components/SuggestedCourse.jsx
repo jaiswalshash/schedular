@@ -144,7 +144,7 @@ const ScheduleCard = ({ schedule, isPrimary = false, index }) => (
 
 const SuggestedCourse = () => {
   return (
-    <div className="container mx-auto p-4 px-[4rem] animate-fadeIn">
+    <div className="container mx-auto p-4 md:px-[4rem] lg:px-[4rem] animate-fadeIn">
       <h2 className="form text-lg font-semibold mb-4">Your customized schedule</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-[3rem]">
         <ScheduleCard schedule={dummyData.customSchedule} isPrimary={true} index={0} />

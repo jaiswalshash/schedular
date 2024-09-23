@@ -24,17 +24,17 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <div className=" mx-auto px-[4rem] mt-4 animate-fadeIn">
+      <div className=" mx-auto p-4 md:px-[4rem] lg:px-[4rem] mt-4 animate-fadeIn">
         <h1 className="text-lg font-semibold mb-4 flex items-center">
           Profile
         </h1>
 
-        <div className="w-[40%] border-[1px] shadow py-10 p-5 rounded-lg mb-[3rem] flex items-center gap-[1.2rem]">
+        <div className="md:w-[40%] lg:w-[40%] border-[1px] shadow py-10 p-5 rounded-lg mb-[3rem] flex items-center gap-[1.2rem]">
           <div className="flex items-center justify-center w-[5.2rem] h-[5.2rem] bg-gray-300 rounded-full ">
             <img src={Camera} alt="Camera" width="40" />
           </div>
           <div className="form">
-            <h2 className="text-lg mb-1 text-[#364374] font-semibold">
+            <h2 className="md:text-lg text-sm lg:text-lg mb-1 text-[#364374] font-semibold">
               {profileData.name}
             </h2>
             <p className="text-gray-600">{profileData.phone}</p>

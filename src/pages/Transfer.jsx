@@ -38,7 +38,7 @@ const Transfer = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-lg mx-auto animate-fadeIn">
+      <div className="max-w-lg p-4 mx-auto animate-fadeIn">
         <div className="form font-semibold w-full mt-5 flex justify-center">
           Select Organisation
         </div>
