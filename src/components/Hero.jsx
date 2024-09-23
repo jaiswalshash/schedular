@@ -37,11 +37,11 @@ export default function Hero() {
         </div>
 
         {/* Image Section */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 flex justify-center">
           <img 
             src={User} 
             alt="Hero" 
-            className="w-full max-w-xs md:max-w-md lg:max-w-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
+            className="w-[80%] md:w-full lg:w-full max-w-x md:max-w-md lg:max-w-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
           />
         </div>
       </div> 

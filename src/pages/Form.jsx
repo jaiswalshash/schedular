@@ -125,7 +125,7 @@ const Form = () => {
   return (
     <>
       <Navbar />
-      <div className="form w-full max-w-lg mx-auto mt-10">
+      <div className="form w-full px-5 max-w-lg mx-auto mt-10">
         {/* Progress Bar with breaks */}
         <div className="flex flex-col space-y-3 items-center justify-between mb-[3rem]">
           <div className="flex justify-between w-full">
