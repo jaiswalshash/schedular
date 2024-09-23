@@ -8,10 +8,9 @@ export default function Hero() {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    // Trigger the animation once the component mounts
     setTimeout(() => {
       setAnimate(true);
-    }, 100); // Delay slightly to ensure smooth transition
+    }, 100); 
   }, []);
 
   const handleForm = () => {
@@ -19,11 +18,11 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-[#2f3b6b] dropdown flex items-center justify-center h-screen absolute inset-0 -z-10">
-      <div className={`container mx-auto flex items-center justify-between w-[75%] transform transition-all duration-1000 ease-in-out ${animate ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+    <div className="bg-[#2f3b6b] flex items-center justify-center h-screen absolute inset-0 -z-10">
+      <div className={`container mx-auto flex flex-col mt-[5rem] md:flex-row items-center justify-between md:w-[75%] px-5 md:px-0 transform transition-all duration-1000 ease-in-out ${animate ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         
         {/* Text Section */}
-        <div className="hero-content text-left space-y-10 text-cyan-400">
+        <div className="hero-content text-center md:text-left space-y-10 text-cyan-400 mb-10 md:mb-0">
           <ul className="space-y-4 list-disc pl-5">
             <li>Assess yourself</li>
             <li>Get customized schedule</li>
@@ -42,7 +41,7 @@ export default function Hero() {
           <img 
             src={User} 
             alt="Hero" 
-            className="transition-transform transform hover:scale-105 duration-300 ease-in-out"
+            className="w-full max-w-xs md:max-w-md lg:max-w-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
           />
         </div>
       </div> 
