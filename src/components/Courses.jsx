@@ -63,7 +63,7 @@ const dummyData = {
 };
 
 const ScheduleButton = ({ name, duration }) => (
-  <button className="bg-[#1A6400] text-white shadow text-sm py-2 px-4 rounded-md mb-4 w-full text-left flex justify-between items-center">
+  <button className="bg-[#1A6400] text-white shadow text-sm py-2 px-4 rounded-md mb-2 w-full text-left flex justify-between items-center">
     <span>
       {name} ({duration})
     </span>
@@ -77,12 +77,14 @@ const ExpertCard = ({ name, degree, description, isHighlighted }) => (
   >
     <div className="flex items-center mb-2">
       <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-      <div>
-        <h3 className="font-bold">{name}</h3>
-        <p className="text-sm">{degree}</p>
+      <div className="flex flex-col gap-4">
+        <div>
+          <h3 className="font-bold">{name}</h3>
+          <p className="text-sm">{degree}</p>
+        </div>
+        <p className="text-sm">{description}</p>
       </div>
     </div>
-    <p className="text-sm">{description}</p>
   </div>
 );
 
@@ -104,7 +106,7 @@ const SchedulesExpertsCommunity = () => {
     <div className="container mx-auto p-4 md:px-[4rem] lg:px-[4rem] animate-fadeIn">
       <section className="mb-8">
         <h2 className="text-lg font-medium mb-4">Your Schedules</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
           {dummyData.schedules.map((schedule) => (
             <ScheduleButton
               key={schedule.id}
@@ -125,11 +127,13 @@ const SchedulesExpertsCommunity = () => {
                 <span className="text-sm mt-2">Step 1</span>
                 <div className="w-3 h-3 border-2 border-gray-400 rounded-full"></div>
 
-                <span className="text-xs text-gray-500 text-center">Asses yourself</span>
+                <span className="text-xs text-gray-500 text-center">
+                  Asses yourself
+                </span>
               </div>
 
               {/* Line */}
-              <hr className="h-[0.9px] bg-black w-[4rem] rounded"/>
+              <hr className="h-[0.9px] bg-black w-[4rem] rounded" />
             </div>
 
             {/* Step 2 */}
@@ -144,7 +148,7 @@ const SchedulesExpertsCommunity = () => {
               </div>
 
               {/* Line */}
-              <hr className="h-[0.9px] bg-black w-[4rem] rounded"/>
+              <hr className="h-[0.9px] bg-black w-[4rem] rounded" />
             </div>
             {/* Step 3 */}
             <div className="flex flex-col gap-2 items-center">
@@ -152,7 +156,9 @@ const SchedulesExpertsCommunity = () => {
 
               <div className="w-3 h-3 border-2 border-gray-400 rounded-full"></div>
 
-              <span className="text-xs text-gray-500 text-center">Progress with us</span>
+              <span className="text-xs text-gray-500 text-center">
+                Progress with us
+              </span>
             </div>
           </div>
           <div className="text-center">
