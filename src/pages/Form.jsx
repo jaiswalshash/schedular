@@ -134,7 +134,7 @@ const Form = () => {
               disabled={currentPage === 1}
               className="text-black font-semibold text-sm underline"
             >
-              &larr; Previous
+              {currentPage !== 1 && <>&larr; Previous</>}
             </button>
 
             <button

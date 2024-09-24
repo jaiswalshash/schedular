@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom': 'linear-gradient(180deg, #AC926A 0%, #463B2B 100%)',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: 0 },

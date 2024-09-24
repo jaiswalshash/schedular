@@ -61,7 +61,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-[#364374] text-sm text-white py-2 rounded transition duration-300"
+            className="w-full bg-[#8C7147] text-sm text-white py-2 rounded transition duration-300"
           >
             Continue
           </button>

@@ -28,7 +28,7 @@ const ScheduleButton = ({ name, duration }) => (
 );
 
 const ExpertCard = ({ name, degree, description, isHighlighted }) => (
-  <div className={`p-4 rounded-lg shadow hover:bg-blue-100 bg-teal-100 cursor-pointer animate-fadeIn}`}>
+  <div className={`p-4 rounded-lg shadow hover:bg-[#8C7147] hover:text-white bg-teal-100 cursor-pointer animate-fadeIn}`}>
     <div className="flex items-center mb-2">
       <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
       <div>

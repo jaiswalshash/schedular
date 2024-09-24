@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white p-4 py-6 md:px-[4rem] lg:px-[4rem]">
+    <footer className="bg-[#8C7147] text-white p-4 py-6 md:px-[4rem] lg:px-[4rem]">
       {/* Welcome Message Section */}
       <div className="text-center mb-4">
         <p className="text-sm lg:text-base">
@@ -14,7 +14,7 @@ const Footer = () => {
       </div>
 
       {/* Links Section */}
-      <div className="border-t border-blue-800 pt-4">
+      <div className="border-t border-black pt-4">
         <ul className="flex justify-center space-x-8 text-sm">
           <li>
             <Link to="/privacy-policy" className="hover:underline">

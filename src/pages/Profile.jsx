@@ -60,7 +60,10 @@ const Profile = () => {
 
         <h3 className="text-lg font-semibold mb-2">Get more schedule</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <button onClick={handleClick} className="bg-[#00D1FF] text-[#364374] px-6 p-2 rounded font-semibold text-start text-md transition-colors">
+        <button 
+            onClick={handleClick} 
+            className="bg-[#AC926A] shadow border-[2.5px] border-[white] text-white font-bold py-2 px-4 rounded transition-transform transform hover:translate-y-1 hover:scale-105 duration-300 ease-in-out"
+          >
             GET CUSTOMIZED SCHEDULE
           </button>
         </div>

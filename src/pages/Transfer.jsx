@@ -77,7 +77,7 @@ const Transfer = () => {
             disabled={!selectedOptions} // Enable button only when an option is selected
             className={`mt-5 text-white py-2 px-4 rounded ${
               selectedOptions
-                ? "bg-green-500 hover:bg-green-600"
+                ? "bg-[#1A6400] hover:bg-green-600"
                 : "bg-gray-400 cursor-not-allowed"
             }`}
           >

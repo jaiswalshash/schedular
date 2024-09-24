@@ -189,7 +189,7 @@ const RRB = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="w-[179px] bg-[#364374] text-white p-2 rounded hover:bg-blue-600"
+              className="w-[179px] bg-[#8C7147] text-white p-2 rounded hover:bg-blue-600"
             >
               Submit
             </button>

@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="flex flex-col items-center">
         <Link to="/">
           <div className="flex gap-1">
-            <h1 className="heading text-3xl font-bold text-blue-900">
+            <h1 className="heading text-3xl font-bold text-[#8C7147]">
               Scheduler
             </h1>
             <img
@@ -100,6 +100,12 @@ const Navbar = () => {
                 <img src={avatar} className="mr-2" alt="Profile" /> Profile
               </Link>
               <Link
+                to="/search-schedules"
+                className="flex gap-2 items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >
+                <img src={hiring} className="mr-2" alt="Search Schedules" /> Search Schedules
+              </Link>
+              <Link
                 to="/mutual-matches"
                 className="flex gap-2 items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
@@ -144,7 +150,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div className="block z-12 ">
+      <div className="block z-12 md:hidden lg:hidden">
         <img
           src={hamburger}
           alt="hamburger"
@@ -154,7 +160,7 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="flex flex-col animate-fadeIn absolute items-end md:hidden inset-0 bg-black bg-opacity-20 z-20 h-screen space-y-3">
+        <div className="flex lg:hidden flex-col animate-fadeIn absolute items-end md:hidden inset-0 bg-black bg-opacity-20 z-20 h-screen space-y-3">
           <div className="bg-white absolute top-0 p-4 bottom-0 w-[85%] rounded-md">
             <div className="flex justify-between items-end w-full">
               <div></div>
@@ -189,6 +195,12 @@ const Navbar = () => {
                 className="flex gap-2 items-center text-[#364374] hover:text-blue-900"
               >
                 <img src={avatar} className="mr-2" alt="Profile" /> Profile
+              </Link>
+              <Link
+                to="/search-schedules"
+                className="flex gap-2 items-center text-[#364374] hover:text-blue-900"
+              >
+                <img src={hiring} className="mr-2" alt="Search Schedules" /> Search Schedules
               </Link>
               <Link
                 to="/mutual-matches"
