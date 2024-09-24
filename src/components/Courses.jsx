@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const dummyData = {
   schedules: [
@@ -102,6 +103,10 @@ const CommunityInsightCard = ({ name, degree, description }) => (
 );
 
 const SchedulesExpertsCommunity = () => {
+  const navigate = useNavigate()
+  const handleForm = () => {
+    navigate("/form");
+  };
   return (
     <div className="container mx-auto p-4 md:px-[4rem] lg:px-[4rem] animate-fadeIn">
       <section className="mb-8">
@@ -163,7 +168,7 @@ const SchedulesExpertsCommunity = () => {
           </div>
           <div className="text-center">
             <button
-              // onClick={handleForm}
+              onClick={handleForm}
               className="bg-[#AC926A] border-[2.5px] border-[white] text-white font-bold py-2 px-4 rounded transition-transform transform hover:translate-y-1 hover:scale-105 duration-100 ease-in-out"
             >
               GET CUSTOMIZED SCHEDULE

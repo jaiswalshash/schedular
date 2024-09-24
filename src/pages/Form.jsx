@@ -73,12 +73,20 @@ const Form = () => {
         { name: "More than 5", image: more5 },
       ],
     },
+    {
+      title: "Your customized schedule",
+      options: [
+        { name: "3 Months (8 hrs/day)", image: less5 },
+        { name: "6 Months (6 hrs/day)", image: more5 },
+        { name: "9 Months (4 hrs/day)", image: more5 },
+      ],
+    },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedOptions, setSelectedOptions] = useState({});
   const [animate, setAnimate] = useState(false);
-  const totalSteps = 5;
+  const totalSteps = 6;
   const navigate = useNavigate();
 
   useEffect(() => {
