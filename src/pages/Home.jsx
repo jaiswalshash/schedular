@@ -8,7 +8,7 @@ import CommunityInsights from "../components/CommunityInsights";
 import FAQ from "../components/FAQ";
 const Home = () => {
   return (
-    <div className="flex flex-col">
+    <>
       <Navbar />
       <Hero />
       <ScheduleComponent/>
@@ -16,7 +16,7 @@ const Home = () => {
       <CommunityInsights/>
       <FAQ/>
       <Footer/>
-    </div>
+    </>
   );
 };
 
