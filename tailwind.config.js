@@ -24,5 +24,16 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [function ({ addUtilities }) {
+    addUtilities({
+      '.scrollbar-hide': {
+        /* Firefox */
+        'scrollbar-width': 'none',
+        /* Chrome, Edge, and Safari */
+        '&::-webkit-scrollbar': {
+          display: 'none',
+        },
+      },
+    });
+  },],
 }

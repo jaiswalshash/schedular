@@ -10,6 +10,10 @@ import transfer from "../assets/transfer.png";
 import user from "../assets/user.png";
 import hamburger from "../assets/hamburger.png";
 import arrow from "../assets/arrows.png";
+import arrowWhite from "../assets/arrows-white.png";
+import ibps from "../assets/ibps.png";
+import railways from "../assets/rail.png";
+import ssc from "../assets/SSC.png";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -25,56 +29,61 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
+console.log(location.pathname)
   // Function to check if a route is active
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="flex justify-between items-center py-3 px-6 bg-white shadow">
+    <nav className={`flex ${location.pathname ==="/" ? "absolute text-white": "block text-[#364374" } w-full justify-between items-center py-3 px-6`}>
       {/* Left Section - Logo and Slogan */}
-      <div className="flex flex-col items-center">
-        <Link to="/">
-          <div className="flex gap-1">
-            <h1 className="heading text-3xl font-bold text-[#8C7147]">
-              Scheduler
-            </h1>
-            <img
-              src={arrow}
-              alt="Arrow"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </Link>
-        <p className="text-[0.8rem] text-gray-600">
-          One stop solution for Gov jobs
-        </p>
+      <div  className="flex gap-2">
+        <div className="flex justify-center items-center">
+          <img className="" src={ssc} alt="ssc"/>
+          <img src={ibps} alt="ibps" />
+          <img src={railways} alt="railways" />
+        </div>
+        <div className="flex flex-col items-center">
+          <Link to="/">
+            <div className="flex gap-1">
+            <h1 className={`${location.pathname === "/" ? " text-white": "text-[#364374" } heading text-2xl font-bold`} >Scheduler</h1>
+              <img
+                src={location.pathname === "/" ?arrowWhite : arrow}
+                alt="Arrow"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </Link>
+          <p className={`text-[0.8rem] ${location.pathname === "/" ? " text-white": "text-[#364374" }`}>
+            One stop solution for Gov jobs
+          </p>
+        </div>
       </div>
 
       {/* Right Section - Links and User Icon */}
       <div className="hidden links md:flex lg:flex items-center space-x-8 relative">
         <Link
-          to="/our-experts"
-          className={`links text-[#364374] hover:text-blue-900 ${
+          to="/"
+          className={`links ${location.pathname === "/" ? " text-white hover:text-gray-200": "text-[#364374 hover:text-blue-900" } ${
             isActive("/our-experts") ? "underline font-bold" : ""
-          }`}
+          } drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] heading`}
         >
           Our IITian Experts
         </Link>
         <Link
           to="/transfers"
-          className={`links text-[#364374] hover:text-blue-900 ${
+          className={`links ${location.pathname === "/" ? " text-white hover:text-gray-200": "text-[#364374 hover:text-blue-900" } ${
             isActive("/transfers") ? "underline font-bold" : ""
-          }`}
+          } drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] heading`}
         >
           Mutual Transfers
         </Link>
         <Link
           to="/schedules"
-          className={`links text-[#364374] hover:text-blue-900 ${
+          className={`links ${location.pathname === "/" ? " text-white hover:text-gray-200": "text-[#364374 hover:text-blue-900" } ${
             isActive("/schedules") ? "underline font-bold" : ""
-          }`}
+          } drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] heading`}
         >
-          Your Schedules
+          <h3 className="">Your Schedules</h3>
         </Link>
 
         {/* User Icon */}
@@ -103,7 +112,8 @@ const Navbar = () => {
                 to="/search-schedules"
                 className="flex gap-2 items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
-                <img src={hiring} className="mr-2" alt="Search Schedules" /> Search Schedules
+                <img src={hiring} className="mr-2" alt="Search Schedules" />{" "}
+                Search Schedules
               </Link>
               <Link
                 to="/mutual-matches"
@@ -164,7 +174,10 @@ const Navbar = () => {
           <div className="bg-white absolute top-0 p-4 bottom-0 w-[85%] rounded-md">
             <div className="flex justify-between items-end w-full">
               <div></div>
-              <div onClick={toggleMobileMenu} className="rounded-full h-5 w-5 border-black cursor-pointer border-2 flex justify-center items-center p-4 font-bold text-2xl">
+              <div
+                onClick={toggleMobileMenu}
+                className="rounded-full h-5 w-5 border-black cursor-pointer border-2 flex justify-center items-center p-4 font-bold text-2xl"
+              >
                 X
               </div>
             </div>
@@ -173,8 +186,8 @@ const Navbar = () => {
                 to="/our-experts"
                 className="flex gap-2 items-center text-[#364374] hover:text-blue-900"
               >
-                <img src={aboutUs} className="mr-2" alt="About Us" />{" "}
-                Our IITian Experts
+                <img src={aboutUs} className="mr-2" alt="About Us" /> Our IITian
+                Experts
               </Link>
               <Link
                 to="/transfers"
@@ -200,7 +213,8 @@ const Navbar = () => {
                 to="/search-schedules"
                 className="flex gap-2 items-center text-[#364374] hover:text-blue-900"
               >
-                <img src={hiring} className="mr-2" alt="Search Schedules" /> Search Schedules
+                <img src={hiring} className="mr-2" alt="Search Schedules" />{" "}
+                Search Schedules
               </Link>
               <Link
                 to="/mutual-matches"
