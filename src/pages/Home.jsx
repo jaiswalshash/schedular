@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ScheduleComponent from "../components/ScheduleComponent";
@@ -6,16 +6,25 @@ import Footer from "../components/Footer";
 import ExpertsCard from "../components/ExperCard";
 import CommunityInsights from "../components/CommunityInsights";
 import FAQ from "../components/FAQ";
+
 const Home = () => {
+  const expertsRef = useRef(null);
+
+  const scrollToExperts = () => {
+    expertsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar onExpertsClick={scrollToExperts} />
       <Hero />
-      <ScheduleComponent/>
-      <ExpertsCard/>
-      <CommunityInsights/>
-      <FAQ/>
-      <Footer/>
+      <ScheduleComponent />
+      <section ref={expertsRef}>
+        <ExpertsCard />
+      </section>
+      <CommunityInsights />
+      <FAQ />
+      <Footer />
     </>
   );
 };

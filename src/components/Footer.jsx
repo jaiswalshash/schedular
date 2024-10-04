@@ -22,14 +22,15 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <a href="#" className="hover:underline">
-              CONTACT US 
-            </a>
+
+            <Link to="/contact" className="hover:underline">
+              CONTACT US
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:underline">
+          <Link to="/about-us" className="hover:underline">
               ABOUT US
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

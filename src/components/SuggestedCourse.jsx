@@ -119,7 +119,7 @@ const ScheduleCard = ({ schedule, isPrimary = false, index }) => (
         <li key={index} className="flex text-sm font-semibold items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 mr-1 text-green-500"
+            className="h-4 w-4 mr-1 text-[#1A6400]"
             viewBox="0 0 20 20"
             fill="currentColor"
           >

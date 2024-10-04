@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css"
+import { Link } from "react-router-dom";
 
 // Dummy data (replace with API call when backend is ready)
 const fetchData = () => ({
@@ -48,13 +49,14 @@ const ScheduleComponent = () => {
       <div className="bg-white flex flex-col justify-items-center items-center p-6 rounded-lg shadow-lg max-w-xl mx-auto mb-10 mt-11">
         <h2 className="text-3xl heading font-bold mb-6">Your Schedules</h2>
         {data.scheduleList.map((schedule, index) => (
-          <button
+          <Link
+            to="/schedule"
             key={index}
             className="w-[60%] form mb-4 py-3 px-6 bg-[#1A6400] text-white rounded-lg flex justify-between items-center"
           >
             <span>{`${schedule.name} (${schedule.duration})`}</span>
             <span>&gt;</span>
-          </button>
+          </Link>
         ))}
       </div>
     </div>

@@ -16,7 +16,7 @@ import railways from "../assets/rail.png";
 import ssc from "../assets/SSC.png";
 import "./navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ onExpertsClick }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Hamburger menu state
 
@@ -61,13 +61,19 @@ console.log(location.pathname)
 
       {/* Right Section - Links and User Icon */}
       <div className="hidden links md:flex lg:flex items-center space-x-8 relative">
-        <Link
-          to="/"
-          className={`links ${location.pathname === "/" ? " text-white hover:text-gray-200": "text-[#364374 hover:text-blue-900" } ${
+      <Link 
+        to="/"
+      >
+      <button
+          onClick={onExpertsClick}
+          className={`links ${
+            location.pathname === "/" ? " text-white hover:text-gray-200" : "text-[#364374 hover:text-blue-900"
+          } ${
             isActive("/our-experts") ? "underline font-bold" : ""
           } drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] heading`}
         >
           Our IITian Experts
+        </button>
         </Link>
         <Link
           to="/transfers"
@@ -101,7 +107,7 @@ console.log(location.pathname)
 
           {/* Dropdown Menu */}
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white border py-3 border-gray-200 rounded shadow-lg z-10">
+            <div className="absolute right-0 mt-2 w-[13rem] bg-white border py-3 border-gray-200 rounded shadow-lg z-10">
               <Link
                 to="/profile"
                 className="flex gap-2 items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -113,7 +119,7 @@ console.log(location.pathname)
                 className="flex gap-2 items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
                 <img src={hiring} className="mr-2" alt="Search Schedules" />{" "}
-                Search Schedules
+                Explore Schedules
               </Link>
               <Link
                 to="/mutual-matches"
@@ -214,7 +220,7 @@ console.log(location.pathname)
                 className="flex gap-2 items-center text-[#364374] hover:text-blue-900"
               >
                 <img src={hiring} className="mr-2" alt="Search Schedules" />{" "}
-                Search Schedules
+                Explore Schedules
               </Link>
               <Link
                 to="/mutual-matches"

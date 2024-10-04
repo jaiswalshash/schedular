@@ -13,6 +13,13 @@ import RRB from "./pages/RRB";
 import Banking from "./pages/Banking";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import OurCourses from "./pages/OurCourses";
+import MutualMatches from "./pages/MutualMatches";
+import ContactUs from "./pages/ContactUs";
+import Feedback from "./pages/Feedback";
+import Hiring from "./pages/Hiring";
+import AboutUs from "./pages/AboutUs";
+import Schedule from "./pages/Schedule";
 
 const App = () => {
   return (
@@ -31,6 +38,13 @@ const App = () => {
           <Route path="/transfers/rrb" element={<RRB />} />
           <Route path="/transfers/banking" element={<Banking />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/search-schedules" element={<OurCourses />} />
+          <Route path="/mutual-matches" element={<MutualMatches />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/hiring" element={<Hiring />} />
+          <Route path="/about-us" element={<AboutUs/>} />
+          <Route path="/schedule" element={<Schedule />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </>

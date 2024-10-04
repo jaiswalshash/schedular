@@ -2,7 +2,7 @@ import React from "react";
 import Camera from "../assets/camera.png";
 import Navbar from "../components/Navbar";
 import "../components/navbar.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Dummy data (replace with actual data from backend)
 const profileData = {
@@ -45,7 +45,8 @@ const Profile = () => {
         <h3 className="text-lg font-semibold mb-2">Your schedules</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
           {profileData.schedules.map((schedule, index) => (
-            <div
+            <Link
+              to= "/schedule"
               key={index}
               className="bg-[#1A6400] text-white p-2 px-6 rounded flex justify-between items-center"
             >
@@ -54,7 +55,7 @@ const Profile = () => {
                 <span>({schedule.duration})</span>
               </div>
               <p>{">"}</p>
-            </div>
+            </Link>
           ))}
         </div>
 

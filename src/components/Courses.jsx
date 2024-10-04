@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const dummyData = {
   schedules: [
@@ -64,12 +64,12 @@ const dummyData = {
 };
 
 const ScheduleButton = ({ name, duration }) => (
-  <button className="bg-[#1A6400] text-white shadow text-sm py-2 px-4 rounded-md mb-2 w-full text-left flex justify-between items-center">
+  <Link to="/schedule" className="bg-[#1A6400] text-white shadow text-sm py-2 px-4 rounded-md mb-2 w-full text-left flex justify-between items-center">
     <span>
       {name} ({duration})
     </span>
     <span>&gt;</span>
-  </button>
+  </Link>
 );
 
 const ExpertCard = ({ name, degree, description, isHighlighted }) => (
