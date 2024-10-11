@@ -34,7 +34,7 @@ console.log(location.pathname)
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`flex ${location.pathname ==="/" ? "bg-[#36332F80] py-2 bg-opacity-50 absolute text-white": "block text-[#364374" } w-full justify-between items-center px-6`}>
+    <nav className={`flex ${location.pathname ==="/" ? "bg-[#36332F80]  bg-opacity-50 absolute text-white": "block text-[#364374" } w-full justify-between items-center py-2 px-6`}>
       {/* Left Section - Logo and Slogan */}
       <div  className="flex gap-2">
         <div className="flex justify-center items-center">
