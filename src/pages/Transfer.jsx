@@ -7,7 +7,6 @@ import "../components/navbar.css";
 import Navbar from "../components/Navbar";
 
 const Transfer = () => {
-  const [selectedOptions, setSelectedOptions] = useState(null); // Initialize with null or empty string
   const navigate = useNavigate(); // Initialize the navigate function
 
   // Sample formData object
@@ -20,25 +19,15 @@ const Transfer = () => {
     ],
   };
 
-  // Handle option change
+  // Handle option change and navigate to the selected route
   const handleOptionChange = (option) => {
-    setSelectedOptions(option.name); // Store only the name in state
-  };
-
-  // Handle navigation on "Next" button click
-  const handleNextClick = () => {
-    const selectedOption = formData.options.find(
-      (option) => option.name === selectedOptions
-    );
-    if (selectedOption) {
-      navigate(selectedOption.route); // Navigate to the selected route
-    }
+    navigate(option.route); // Directly navigate to the selected route
   };
 
   return (
     <>
       <Navbar />
-      <div className="max-w-lg p-4 mx-auto animate-fadeIn">
+      <div className="max-w-xl p-4 mx-auto animate-fadeIn">
         <div className="form font-semibold w-full mt-5 flex justify-center">
           Select Organisation
         </div>
@@ -63,27 +52,12 @@ const Transfer = () => {
               <input
                 type="radio"
                 value={option.name}
-                checked={selectedOptions === option.name} // Correct checked condition
-                onChange={() => handleOptionChange(option)}
+                onChange={() => handleOptionChange(option)} // Handle change and navigate
                 className="mr-2"
               />
             </div>
           </label>
         ))}
-
-        <div className="flex justify-end">
-          <button
-            onClick={handleNextClick} // Handle click to navigate
-            disabled={!selectedOptions} // Enable button only when an option is selected
-            className={`mt-5 text-white py-2 px-4 rounded ${
-              selectedOptions
-                ? "bg-[#1A6400] hover:bg-green-600"
-                : "bg-gray-400 cursor-not-allowed"
-            }`}
-          >
-            Next
-          </button>
-        </div>
       </div>
     </>
   );

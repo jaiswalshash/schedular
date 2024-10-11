@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./navbar.css"
+import "./navbar.css";
 import { Link } from "react-router-dom";
 
 // Dummy data (replace with API call when backend is ready)
 const fetchData = () => ({
-  successRate: "99%",
+  successRate: "20+",
   happyStudents: "500+",
   schedules: "10+",
   scheduleList: [
@@ -32,16 +32,23 @@ const ScheduleComponent = () => {
       {/* Stats Section */}
       <div className="flex heading justify-around mb-[4rem] mt-12 transform transition-all duration-1000 ease-in-out">
         <div>
-          <h1 className="text-6xl font-bold text-[#DCD300]">{data.successRate}</h1>
-          <p className="text-xl form">Success rate</p>
+          <h1 className="text-7xl font-bold text-[#DCD300]">
+            {data.schedules}
+          </h1>
+          <p className="text-xl form ">Schedules</p>
         </div>
+
         <div>
-          <h1 className="text-6xl font-bold text-[#DCD300]">{data.happyStudents}</h1>
+          <h1 className="text-7xl font-bold text-[#DCD300]">
+            {data.happyStudents}
+          </h1>
           <p className="text-xl form">Happy students</p>
         </div>
         <div>
-          <h1 className="text-6xl font-bold text-[#DCD300]">{data.schedules}</h1>
-          <p className="text-xl form ">Schedules</p>
+          <h1 className="text-7xl font-bold text-[#DCD300]">
+            {data.successRate}
+          </h1>
+          <p className="text-xl form">Mutual Matches</p>
         </div>
       </div>
 

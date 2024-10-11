@@ -57,6 +57,7 @@ const Feedback = () => {
           <textarea
             name="feedback"
             value={feedback}
+            rows={5}
             onChange={(e) => setFeedback(e.target.value)}
             placeholder="Your feedback"
             className="w-[80%] form border text-sm border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"

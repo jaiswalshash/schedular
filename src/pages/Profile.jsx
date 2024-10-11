@@ -29,26 +29,26 @@ const Profile = () => {
           Profile
         </h1>
 
-        <div className="md:w-[40%] lg:w-[40%] border-[1px] shadow py-10 p-5 rounded-lg mb-[3rem] flex items-center gap-[1.2rem]">
+        <div className="md:w-[40%] lg:w-[40%] border-[1px] shadow-md py-10 p-5 rounded-lg mb-[3rem] bg-[#EDEDED] flex items-center gap-[1.2rem]">
           <div className="flex items-center justify-center w-[5.2rem] h-[5.2rem] bg-gray-300 rounded-full ">
             <img src={Camera} alt="Camera" width="40" />
           </div>
           <div className="form">
-            <h2 className="md:text-lg text-sm lg:text-lg mb-1 text-[#364374] font-semibold">
+            <h2 className="md:text-lg text-sm lg:text-lg mb-1 text-black font-semibold">
               {profileData.name}
             </h2>
-            <p className="text-gray-600">{profileData.phone}</p>
-            <p className="text-gray-600">{profileData.email}</p>
+            <p className="">{profileData.phone}</p>
+            <p className="">{profileData.email}</p>
           </div>
         </div>
 
         <h3 className="text-lg font-semibold mb-2">Your schedules</h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-7 mb-6">
           {profileData.schedules.map((schedule, index) => (
             <Link
               to= "/schedule"
               key={index}
-              className="bg-[#1A6400] text-white p-2 px-6 rounded flex justify-between items-center"
+              className="bg-[#1A6400] shadow-md text-white p-2 px-6 rounded flex justify-between items-center"
             >
               <div>
                 <span>{schedule.name}</span>
@@ -60,10 +60,10 @@ const Profile = () => {
         </div>
 
         <h3 className="text-lg font-semibold mb-2">Get more schedule</h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-7 mb-6">
         <button 
             onClick={handleClick} 
-            className="bg-[#AC926A] shadow border-[2.5px] border-[white] text-white font-bold py-2 px-4 rounded transition-transform transform hover:translate-y-1 hover:scale-105 duration-300 ease-in-out"
+            className="bg-[#604720] shadow-md text-white font-bold py-2 px-4 rounded transition-transform transform hover:translate-y-1 hover:scale-105 duration-300 ease-in-out"
           >
             GET CUSTOMIZED SCHEDULE
           </button>

@@ -72,12 +72,12 @@ const OurCourses = () => {
         <div className="mb-6">
           <input
             type="text"
-            placeholder="Search by schedule code or exam"
+            placeholder="Search by exam"
             className="w-3/5 p-3 rounded-md shadow-md border border-gray-300 "
           />
         </div>
 
-        <div className="form grid grid-cols-5">
+        <div className="form grid gap-[5rem] grid-cols-5">
           {courses.map((course) => (
             <div
               key={course.id}

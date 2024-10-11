@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import editIcon from "../assets/editing.png";
 import "../components/navbar.css";
+import { FaTrash } from "react-icons/fa";
 
 // Dummy data as if coming from backend
 const fetchTransferProfile = () => {
@@ -38,7 +39,8 @@ const fetchMatchingResults = () => {
 const TransferProfile = () => {
   const [profile, setProfile] = useState(null);
   const [matchingResults, setMatchingResults] = useState([]);
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [isEditModalVisible, setEditModalVisible] = useState(false);
+  const [isDeleteModalVisible, setDeleteModalVisible] = useState(false);
 
   // Simulate fetching data from the backend on component mount
   useEffect(() => {
@@ -49,11 +51,22 @@ const TransferProfile = () => {
   }, []);
 
   const handleEditClick = () => {
-    setModalVisible(true);
+    setEditModalVisible(true);
+  };
+
+  const handleDeleteClick = () => {
+    setDeleteModalVisible(true);
   };
 
   const handleCloseModal = () => {
-    setModalVisible(false);
+    setEditModalVisible(false);
+    setDeleteModalVisible(false);
+  };
+
+  const handleConfirmDelete = () => {
+    // Handle the deletion logic here
+    console.log("Profile deleted!");
+    handleCloseModal();
   };
 
   return (
@@ -76,16 +89,23 @@ const TransferProfile = () => {
                   >
                     Edit
                   </button>
+                  <>|</>
+                  <div
+                    className="form text-sm text-red-700 cursor-pointer hover:underline flex items-center"
+                    onClick={handleDeleteClick}
+                  >
+                    <FaTrash className="mr-1" /> Delete
+                  </div>
                 </div>
 
                 {/* Profile Details */}
-                <div className=" form font-semibold text-gray-700">
+                <div className="form font-semibold text-gray-700">
                   <p>{profile.name}</p>
                   <p>{profile.position}</p>
                   <p>Category: {profile.category}</p>
                   <p>Current posting: {profile.currentPosting}</p>
                   <div className="flex mt-4">
-                    <p className="">Required Posting Preference: </p>
+                    <p>Required Posting Preference: </p>
                     <p className="grid grid-cols-3 items-center w-[60%] justify-center justify-items-center">
                       {profile.preferences.map((preference, index) => (
                         <span
@@ -125,14 +145,11 @@ const TransferProfile = () => {
           </div>
 
           {/* Modal for Editing Profile */}
-          {isModalVisible && (
+          {isEditModalVisible && (
             <div className="absolute top-[15rem] right-[12rem]">
               <div className="bg-[#D9D9D9] p-4 rounded-lg shadow-lg max-w-xs w-full">
                 <div className="flex justify-end">
-                  <button
-                    className="font-bold "
-                    onClick={handleCloseModal}
-                  >
+                  <button className="font-bold" onClick={handleCloseModal}>
                     X
                   </button>
                 </div>
@@ -145,6 +162,37 @@ const TransferProfile = () => {
                   <span className="text-md font-semibold">₹10</span>
                   <button className="bg-[#1A6400] text-white py-2 px-4 rounded hover:bg-green-700">
                     Pay Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Modal for Delete Confirmation */}
+          {isDeleteModalVisible && (
+            <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-40">
+              <div className="bg-[#FFEBEB] p-4 rounded-lg shadow-lg max-w-xs w-full">
+                <div className="flex justify-end">
+                  <button className="font-bold" onClick={handleCloseModal}>
+                    X
+                  </button>
+                </div>
+
+                <p className="form mb-4 py-4">
+                  Are you sure you want to delete your profile?
+                </p>
+                <div className="flex justify-end gap-4 items-center">
+                  <button
+                    className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700"
+                    onClick={handleConfirmDelete}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="bg-gray-300 py-2 px-4 rounded hover:bg-gray-400"
+                    onClick={handleCloseModal}
+                  >
+                    Cancel
                   </button>
                 </div>
               </div>

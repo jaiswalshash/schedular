@@ -34,7 +34,7 @@ console.log(location.pathname)
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`flex ${location.pathname ==="/" ? "absolute text-white": "block text-[#364374" } w-full justify-between items-center py-3 px-6`}>
+    <nav className={`flex ${location.pathname ==="/" ? "bg-[#36332F80] py-2 bg-opacity-50 absolute text-white": "block text-[#364374" } w-full justify-between items-center px-6`}>
       {/* Left Section - Logo and Slogan */}
       <div  className="flex gap-2">
         <div className="flex justify-center items-center">
@@ -42,7 +42,7 @@ console.log(location.pathname)
           <img src={ibps} alt="ibps" />
           <img src={railways} alt="railways" />
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center">
           <Link to="/">
             <div className="flex gap-1">
             <h1 className={`${location.pathname === "/" ? " text-white": "text-[#364374" } heading text-2xl font-bold`} >Scheduler</h1>
@@ -60,6 +60,7 @@ console.log(location.pathname)
       </div>
 
       {/* Right Section - Links and User Icon */}
+      {location.pathname ==="/" && <>
       <div className="hidden links md:flex lg:flex items-center space-x-8 relative">
       <Link 
         to="/"
@@ -143,10 +144,10 @@ console.log(location.pathname)
                 feedback
               </Link>
               <Link
-                to="/sign-out"
+                to="/login"
                 className="flex gap-2 items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
-                <img src={logout} className="mr-2" alt="Sign Out" /> Sign out
+                <img src={logout} className="mr-2" alt="Sign Out" /> Login
               </Link>
               <hr />
               <Link
@@ -244,10 +245,10 @@ console.log(location.pathname)
                 feedback
               </Link>
               <Link
-                to="/sign-out"
+                to="/login"
                 className="flex gap-2 items-center text-[#364374] hover:text-blue-900"
               >
-                <img src={logout} className="mr-2" alt="Sign Out" /> Sign out
+                <img src={logout} className="mr-2" alt="Sign Out" /> Login
               </Link>
               <hr />
               <Link
@@ -267,6 +268,7 @@ console.log(location.pathname)
           </div>
         </div>
       )}
+      </>}
     </nav>
   );
 };
