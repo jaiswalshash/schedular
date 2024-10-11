@@ -36,7 +36,7 @@ const Transfer = () => {
         {formData.options.map((option) => (
           <label
             key={option.name}
-            className="container max-w-lg mx-auto mt-5 flex items-center bg-[#D9D9D9] rounded-md py-2 px-4 cursor-pointer hover:bg-gray-200 transition-colors"
+            className="container mb-7 max-w-lg mx-auto mt-5  h-[3rem] flex items-center bg-[#D9D9D9] rounded-md py-2 px-4 cursor-pointer hover:bg-gray-200 transition-colors"
           >
             <div className="flex items-center flex-1">
               {/* Display the image for the current option */}

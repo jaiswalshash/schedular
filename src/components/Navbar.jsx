@@ -14,9 +14,10 @@ import arrowWhite from "../assets/arrows-white.png";
 import ibps from "../assets/ibps.png";
 import railways from "../assets/rail.png";
 import ssc from "../assets/SSC.png";
+
 import "./navbar.css";
 
-const Navbar = ({ onExpertsClick }) => {
+const Navbar = ({ onExpertsClick, onScheduleClick }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Hamburger menu state
 
@@ -37,11 +38,11 @@ console.log(location.pathname)
     <nav className={`flex ${location.pathname ==="/" ? "bg-[#36332F80]  bg-opacity-50 absolute text-white": "block text-[#364374" } w-full justify-between items-center py-2 px-6`}>
       {/* Left Section - Logo and Slogan */}
       <div  className="flex gap-2">
-        <div className="flex justify-center items-center">
+        {location.pathname ==="/" && <div className="flex justify-center items-center">
           <img className="" src={ssc} alt="ssc"/>
           <img src={ibps} alt="ibps" />
           <img src={railways} alt="railways" />
-        </div>
+        </div>}
         <div className="flex flex-col items-center justify-center">
           <Link to="/">
             <div className="flex gap-1">
@@ -85,7 +86,8 @@ console.log(location.pathname)
           Mutual Transfers
         </Link>
         <Link
-          to="/schedules"
+          onClick={onScheduleClick}
+          to="/"
           className={`links ${location.pathname === "/" ? " text-white hover:text-gray-200": "text-[#364374 hover:text-blue-900" } ${
             isActive("/schedules") ? "underline font-bold" : ""
           } drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] heading`}

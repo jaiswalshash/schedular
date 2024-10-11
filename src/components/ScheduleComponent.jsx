@@ -53,7 +53,7 @@ const ScheduleComponent = () => {
       </div>
 
       {/* Schedule List */}
-      <div className="bg-white flex flex-col justify-items-center items-center p-6 rounded-lg shadow-lg max-w-xl mx-auto mb-10 mt-11">
+      <div className="bg-white  flex flex-col justify-items-center items-center p-6 rounded-lg shadow-lg max-w-xl mx-auto mb-10 mt-[6rem]">
         <h2 className="text-3xl heading font-bold mb-6">Your Schedules</h2>
         {data.scheduleList.map((schedule, index) => (
           <Link

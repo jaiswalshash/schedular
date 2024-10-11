@@ -104,7 +104,20 @@ const RRB = () => {
                 <option value="Category 2">Category 2</option>
               </select>
             </div>
-
+            <div className="flex text-sm gap-3 flex-col">
+              <label className="block text-sm text-gray-700">Department *</label>
+              <select
+                name="post"
+                value={formData.post}
+                onChange={handleChange}
+                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                required
+              >
+                <option value="">Select Department</option>
+                <option value="Post 1">Post 1</option>
+                <option value="Post 2">Post 2</option>
+              </select>
+            </div>
             <div className="flex text-sm gap-3 flex-col">
               <label className="block text-sm text-gray-700">Post *</label>
               <select
@@ -122,7 +135,37 @@ const RRB = () => {
 
             <div className="flex text-sm gap-3 flex-col">
               <label className="block text-sm text-gray-700">
-                Current Posting *
+                Current zone *
+              </label>
+              <select
+                name="currentPosting"
+                value={formData.currentPosting}
+                onChange={handleChange}
+                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                required
+              >
+                <option value="">Select Current Posting</option>
+                <option value="Location 1">Location 1</option>
+                <option value="Location 2">Location 2</option>
+              </select>
+            </div>
+            <div className="flex text-sm gap-3 flex-col">
+              <label className="block text-sm text-gray-700">
+                Current division *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                required
+              />
+            </div>
+
+            <div className="flex text-sm gap-3 flex-col">
+              <label className="block text-sm text-gray-700">
+                Current posting station *
               </label>
               <select
                 name="currentPosting"
@@ -139,19 +182,42 @@ const RRB = () => {
 
             <div className="flex text-sm gap-3 flex-col">
               <label className="block text-sm text-gray-700">
-                Desired Posting Preference(s) *
+                Desired zone *
               </label>
-              <select
-                name="desiredPosting"
-                value={formData.desiredPosting}
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
                 onChange={handleChange}
                 className="mt-1 p-2 border border-gray-300 rounded w-full"
                 required
-              >
-                <option value="">Select Desired Posting</option>
-                <option value="Location A">Location A</option>
-                <option value="Location B">Location B</option>
-              </select>
+              />
+            </div>
+            <div className="flex text-sm gap-3 flex-col">
+              <label className="block text-sm text-gray-700">
+                Desired division *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                required
+              />
+            </div>
+            <div className="flex text-sm gap-3 flex-col">
+              <label className="block text-sm text-gray-700">
+                Desired posting station(s) *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                required
+              />
             </div>
 
             <div className="flex text-sm gap-3 flex-col">
@@ -182,9 +248,9 @@ const RRB = () => {
             ></textarea>
           </div>
 
-          <p className="text-xs text-center text-red-500">
+          {/* <p className="text-xs text-center text-red-500">
             Please note, you can't modify the details once submitted.
-          </p>
+          </p> */}
 
           <div className="flex justify-center">
             <button

@@ -182,9 +182,9 @@ const PersonalInfoForm = () => {
             ></textarea>
           </div>
 
-          <p className="text-xs text-center text-red-500">
+          {/* <p className="text-xs text-center text-red-500">
             Please note, you can't modify the details once submitted.
-          </p>
+          </p> */}
 
           <div className="flex justify-center">
             <button
